@@ -47,10 +47,10 @@ function App() {
   }
 
   const addTask = (value) => {
-    let copy = [...todoList]
+    let copy = todoList
     copy = [...copy, { id: todoList.length + 1, task: value, complete: false }]
     setTodoList(copy);
-    // console.log('todoList in app', todoList)
+    console.log('todoList in app', value)
   }
 
   return (

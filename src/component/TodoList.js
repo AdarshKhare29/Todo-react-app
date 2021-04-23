@@ -2,13 +2,9 @@ import { useState, useRef } from "react"
 // import Todo from "./Todo"
 
 const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedTodo }) => {
+    console.log('todolist', todoList)
+    let active;
     let [completed, setCompleted] = useState(0)
-    // const handleComplete = () => {
-    //     let count = completedTodo()
-    //     console.log("count", count)
-    //     setCompleted(count)
-    // }
-
     const handleToDoDelete = () => {
         let count = handleFilter()
         setCompleted(0)
@@ -18,15 +14,25 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
         handleToggle(e.currentTarget.id)
         let count = completedTodo()
         count = count + 1
-        // console.log("count", count)
         setCompleted(count)
     }
     const handleDelete = (e) => {
-        let id = parseInt(e.target.id, 10)
+        // let id = parseInt(e.target.id, 10)
         // console.log("deleted", id)
         console.log("delete indivdual", todoList)
-        deleteTodo(id)
+        deleteTodo(+e.target.id)
     }
+
+    const renderActive = () => {
+        active = todoList.filter(todo => todo.complete == false)
+        return active.length
+    }
+
+    const renderComplete = () => {
+        active = todoList.filter(todo => todo.complete !== false)
+        return active.length
+    }
+
     const renderButton = () => {
         if (todoList.length > 0) {
             return (
@@ -34,8 +40,8 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
                     <button style={{ margin: '20px' }}
                         onClick={handleToDoDelete}>Delete Completed </button>
                     <button style={{ margin: '20px' }}>Total todos:{todoList.length}</button>
-                    <button style={{ margin: '20px' }} >Completed todos:{completed}</button>
-                    <button style={{ margin: '20px' }}>Active todos:{todoList.length - completed}</button>
+                    <button style={{ margin: '20px' }} >Completed todos:{renderComplete()}</button>
+                    <button style={{ margin: '20px' }}>Active todos:{renderActive()}</button>
                 </>
             )
         }
@@ -43,7 +49,7 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
     return (<>
         <div>
             {todoList.map((todo) => {
-                // console.log("todo", todo)
+                console.log("todo", todo)
 
                 return (
                     // <div>
