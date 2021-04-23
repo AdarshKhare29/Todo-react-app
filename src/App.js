@@ -7,6 +7,7 @@ import TodoList from './component/TodoList'
 function App() {
 
   const [todoList, setTodoList] = useState([])
+
   const handleToggle = (id) => {
     // console.log("handel Toggle", id)
     let mapped = todoList.map(task => {

@@ -1,20 +1,19 @@
-import { useState, useRef } from "react"
+// import { useState, useRef } from "react"
 // import Todo from "./Todo"
 
 const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedTodo }) => {
-    console.log('todolist', todoList)
+    // console.log('todolist', todoList)
     let active;
-    let [completed, setCompleted] = useState(0)
     const handleToDoDelete = () => {
-        let count = handleFilter()
-        setCompleted(0)
+        handleFilter()
+        // setCompleted(0)
     }
 
     const handleClick = (e) => {
         handleToggle(e.currentTarget.id)
-        let count = completedTodo()
-        count = count + 1
-        setCompleted(count)
+        completedTodo()
+        // count = count + 1
+        // setCompleted(count)
     }
     const handleDelete = (e) => {
         console.log("delete indivdual", todoList)
