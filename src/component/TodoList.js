@@ -17,8 +17,6 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
         setCompleted(count)
     }
     const handleDelete = (e) => {
-        // let id = parseInt(e.target.id, 10)
-        // console.log("deleted", id)
         console.log("delete indivdual", todoList)
         deleteTodo(+e.target.id)
     }
