@@ -75,12 +75,14 @@ hr .hr{
   border-radius: 4px;
   cursor: pointer;
   height: 25px;
+  font-size: 15px;
+  font-weight: 400;
 }
 .btn{
   border: none;
   height: 25px;
   display: inline-block;;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .back-green{
   background-color: green;

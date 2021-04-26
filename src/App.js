@@ -54,11 +54,15 @@ function App() {
     console.log('todoList in app', value)
   }
 
+  const deleteAll = () => {
+    setTodoList([])
+  }
+
   return (
     <div className="todo-form">
       <Header />
       <TodoForm addTask={addTask} />
-      <TodoList todoList={todoList} handleToggle={handleToggle} handleFilter={handleFilter} deleteTodo={deleteTodo} completedTodo={completedTodo} />
+      <TodoList todoList={todoList} handleToggle={handleToggle} handleFilter={handleFilter} deleteTodo={deleteTodo} completedTodo={completedTodo} deleteAll={deleteAll} />
     </div>)
 }
 export default App;

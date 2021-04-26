@@ -1,7 +1,7 @@
 // import { useState, useRef } from "react"
 // import Todo from "./Todo"
 
-const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedTodo }) => {
+const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedTodo, deleteAll }) => {
     // console.log('todolist', todoList)
     let active;
     // const handleToDoDelete = () => {
@@ -30,6 +30,7 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
         return active.length
     }
 
+
     const renderButton = () => {
         // if (todoList.length > 0) {
         return (
@@ -39,6 +40,8 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
                 <p style={{ margin: '20px' }} className="btn back-blue">Total todos:<span>{todoList.length}</span></p>
                 <p style={{ margin: '20px' }} className="btn back-green">Completed todos:<span>{renderComplete()}</span></p>
                 <p style={{ margin: '20px' }} className="btn back-yellow">Active todos:<span>{renderActive()}</span></p>
+                {/* {todoList.length > 0 ? <button className="delete-btn" onClick={deleteAll}>Delete All Todos</button> : ''} */}
+                <button className="delete-btn" onClick={deleteAll}>Delete All Todos</button>
             </div>
         )
         // }
