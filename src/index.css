@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightblue;
+  background-color:#2f2fa2;
 }
 
 code {
@@ -17,7 +17,10 @@ code {
 }
 .strike {
   text-decoration: line-through;
+  color: lightgray;
+
 }
+
 /* .todo-id,.todo-name{
   size:10px;
   margin: 5px;
@@ -46,3 +49,59 @@ code {
   margin-top: 50px;
   margin-left: 500px;
 } */
+.todo-form{
+  background-color: #99738e;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 50px;
+  box-shadow: 4px 4px 1px;
+}
+.todo-input{
+  width: 70%;
+  height: 25px;
+  border: 1px solid black;
+}
+::placeholder{
+  padding-left: 10px;
+}
+hr .hr{
+    border-top: 1px solid red;
+}
+.delete-btn{
+  background-color: #ac0707;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 25px;
+}
+.btn{
+  border: none;
+  height: 25px;
+  display: inline-block;;
+  border-radius: 2px;
+}
+.back-green{
+  background-color: green;
+  width: 150px;
+}
+.back-blue{
+  background-color: rgb(54, 54, 240);
+  width: 100px;
+}
+.back-yellow{
+  background-color: rgb(238, 238, 45);
+  width: 110px;
+}
+span{
+  /* font-size: 18px; */
+  font-weight: 600;
+}
+.todos-data{
+  margin: 5px;
+}
+.todo-name{
+  font-size: 20px;
+  margin: 10px;
+}

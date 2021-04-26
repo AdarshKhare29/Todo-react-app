@@ -4,10 +4,10 @@
 const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedTodo }) => {
     // console.log('todolist', todoList)
     let active;
-    const handleToDoDelete = () => {
-        handleFilter()
-        // setCompleted(0)
-    }
+    // const handleToDoDelete = () => {
+    //     handleFilter()
+    //     // setCompleted(0)
+    // }
 
     const handleClick = (e) => {
         handleToggle(e.currentTarget.id)
@@ -31,17 +31,17 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
     }
 
     const renderButton = () => {
-        if (todoList.length > 0) {
-            return (
-                <>
-                    <button style={{ margin: '20px' }}
-                        onClick={handleToDoDelete}>Delete Completed </button>
-                    <button style={{ margin: '20px' }}>Total todos:{todoList.length}</button>
-                    <button style={{ margin: '20px' }} >Completed todos:{renderComplete()}</button>
-                    <button style={{ margin: '20px' }}>Active todos:{renderActive()}</button>
-                </>
-            )
-        }
+        // if (todoList.length > 0) {
+        return (
+            <div>
+                <button style={{ margin: '20px' }}
+                    onClick={handleFilter} className="delete-btn">Delete Completed </button>
+                <p style={{ margin: '20px' }} className="btn back-blue">Total todos:<span>{todoList.length}</span></p>
+                <p style={{ margin: '20px' }} className="btn back-green">Completed todos:<span>{renderComplete()}</span></p>
+                <p style={{ margin: '20px' }} className="btn back-yellow">Active todos:<span>{renderActive()}</span></p>
+            </div>
+        )
+        // }
     }
     return (<>
         <div>
@@ -61,7 +61,7 @@ const TodoList = ({ todoList, handleToggle, handleFilter, deleteTodo, completedT
                             <input type="checkbox" />
                             <span className="todo-name">{todo.task}</span>
                         </div>
-                        <button id={todo.id} onClick={handleDelete}>-</button>
+                        <button id={todo.id} onClick={handleDelete} className="fa fa-minus fa-trash-alt"></button>
                     </div>
                 );
             })}

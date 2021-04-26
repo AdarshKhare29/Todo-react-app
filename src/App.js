@@ -55,7 +55,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="todo-form">
       <Header />
       <TodoForm addTask={addTask} />
       <TodoList todoList={todoList} handleToggle={handleToggle} handleFilter={handleFilter} deleteTodo={deleteTodo} completedTodo={completedTodo} />
